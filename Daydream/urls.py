@@ -23,5 +23,6 @@ from daydreamBkS import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('categories/', views.categories),
 ]
 urlpatterns += staticfiles_urlpatterns()

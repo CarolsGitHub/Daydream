@@ -42,6 +42,13 @@
 									<li class="hassubs">
 										<a href="categories.html">书籍分类</a>
 										<ul>
+                                            {% for category in allcategory %}
+                                                <li id="menu-item-117720" class="menu-item">
+                                                    <a href="/templates/categories.html">
+                                                        {{ category.name }}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
 											<li><a href="categories.html">Category</a></li>
 											<li><a href="categories.html">Category</a></li>
 											<li><a href="categories.html">Category</a></li>
