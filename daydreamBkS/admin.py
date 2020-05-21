@@ -5,7 +5,7 @@ from .models import Book, Category, Tag, Recommend, Author, Bimg, Press
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ('id', 'category', 'img', 'introduction', 'press', 'title', 'recommend', 'author', 'price',
-                    'time')
+                    'time', 'bnum', 'bclick')
 
     # 文章列表里显示想要的字段
 

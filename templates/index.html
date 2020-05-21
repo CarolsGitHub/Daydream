@@ -40,11 +40,11 @@
 										</ul>
 									</li>
 									<li class="hassubs">
-										<a href="categories.html">书籍分类</a>
+										<a href="/categories/">书籍分类</a>
 										<ul>
                                             {% for category in allcategory %}
                                                 <li id="menu-item-117720" class="menu-item">
-                                                    <a href="/templates/categories.html">
+                                                    <a href="/categories/">
                                                         {{ category.name }}
                                                     </a>
                                                 </li>
@@ -317,81 +317,28 @@
 					
 					<div class="product_grid">
 
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_1.jpg" alt=""></div>
-							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+                        {% for book in allbooks %}
+                        <div class="product">
+							<div class="product_image">
+                                <img src="/media/{{ book.img }}" alt="">
+                            </div>
+							<div class="product_extra product_sale">
+                                <a href="categories.html">
+                                    Hot
+                                </a>
+                            </div>
 							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
+								<div class="product_title">
+                                    <a href="product.html">
+                                        {{ book.title }}
+                                    </a>
+                                </div>
+								<div class="product_price">
+                                    ${{ book.price }}
+                                </div>
 							</div>
 						</div>
-
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_2.jpg" alt=""></div>
-							<div class="product_extra product_sale"><a href="categories.html">Sale</a></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
-							</div>
-						</div>
-
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_3.jpg" alt=""></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
-							</div>
-						</div>
-
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_4.jpg" alt=""></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
-							</div>
-						</div>
-
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_5.jpg" alt=""></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
-							</div>
-						</div>
-
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_6.jpg" alt=""></div>
-							<div class="product_extra product_hot"><a href="categories.html">Hot</a></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
-							</div>
-						</div>
-
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_7.jpg" alt=""></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
-							</div>
-						</div>
-
-						<!-- Product -->
-						<div class="product">
-							<div class="product_image"><img src="/static/images/product_8.jpg" alt=""></div>
-							<div class="product_extra product_sale"><a href="categories.html">Hot</a></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">Smart Phone</a></div>
-								<div class="product_price">$670</div>
-							</div>
-						</div>
+                        {% endfor %}
 
 					</div>
 						

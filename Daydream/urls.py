@@ -14,15 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.template.context_processors import static
+from django.template.defaulttags import url
+from django.urls import path, re_path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 from django.contrib import admin
 from django.urls import path
+
+from Daydream import settings
 from daydreamBkS import views
+from django.views.static import serve
+from Daydream.settings import MEDIA_ROOT
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('categories/', views.categories),
+    re_path(r'^media/(?P<path>.*)/$', serve, {"document_root": MEDIA_ROOT}),
 ]
 urlpatterns += staticfiles_urlpatterns()
