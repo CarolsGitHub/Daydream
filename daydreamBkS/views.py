@@ -30,3 +30,11 @@ def books_show(request):
         'allbooks': allbooks,
     }
     return render(request, 'product.html', context)
+
+
+def login(request):
+    return render(request, 'login.html')
+
+
+def register(request):
+    return render(request, 'register.html')

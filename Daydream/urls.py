@@ -31,5 +31,8 @@ urlpatterns = [
     path('', views.index),
     path('categories/', views.categories),
     re_path(r'^media/(?P<path>.*)/$', serve, {"document_root": MEDIA_ROOT}),
+    path('login/', views.login),
+    path('register/', views.register),
+
 ]
 urlpatterns += staticfiles_urlpatterns()

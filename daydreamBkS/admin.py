@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Category, Tag, Recommend, Author, Bimg, Press
+from .models import Book, Category, Tag, Recommend, Author, Bimg, Press, User
 # Register your models here.
 
 @admin.register(Book)
@@ -43,3 +43,18 @@ class PressAdmin(admin.ModelAdmin):
 @admin.register(Bimg)
 class BimgAdmin(admin.ModelAdmin):
     list_display = ('id', 'text_info', 'img', 'link_url')
+
+@admin.register(User)
+class UsersAdmin(admin.ModelAdmin):
+    list_display = ('id', 'users', 'name', 'sex', 'phone', 'email', 'password', 'c_time')
+
+    # 文章列表里显示想要的字段
+
+    list_per_page = 50
+    # 满50条数据就自动分页
+
+    ordering = ('c_time',)
+    # 后台数据列表排列方式
+
+    list_display_links = ('id', 'users')
+    # 设置哪些字段可以点击进入编辑界面
